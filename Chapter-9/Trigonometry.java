@@ -2,7 +2,9 @@ public class Trigonometry {
 
 	public static void main(String[] args){
 
-		double cos, sin, sum, x = 0.5236;
+		double cos, sin, sum, x = 30;
+
+		x *= Math.PI/180;
 
 		cos = Math.cos(x);
 		sin = Math.sin(x);
