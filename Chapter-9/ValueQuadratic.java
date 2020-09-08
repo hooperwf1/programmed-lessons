@@ -2,10 +2,18 @@ public class ValueQuadratic {
 
 	public static void main(String[] args){
 
-		double x = 0.66, ans, a = 3, b = -8, c = 4;
+		double x, ans;
 
-		ans = (a * (x * x)) + (b * x) + c;
+		x = 0;
+		ans = (3 * (x * x)) + (-8 * x) + 4;
+		System.out.println("At X = " + x + " the answer is " + ans);
 
+		x = 2;
+		ans = (3 * (x * x)) + (-8 * x) + 4;
+		System.out.println("At X = " + x + " the answer is " + ans);
+
+		x = 4;
+		ans = (3 * (x * x)) + (-8 * x) + 4;
 		System.out.println("At X = " + x + " the answer is " + ans);
 	}
 
