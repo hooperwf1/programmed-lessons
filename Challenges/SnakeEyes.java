@@ -10,32 +10,33 @@ public class SnakeEyes {
 		System.out.print("Enter times to run: ");
 		int n = scanner.nextInt();
 
-		final int max = 5;
+		final int max = 6;
 
-		int totalscore = 0, totalrolls = 0, morefour = 0;
+		long totalScore = 0;
+		int totalRolls = 0, moreFour = 0;
 		for (int i = 0; i < n; i++){
 
 			int roll1 = random.nextInt(max) + 1;
 			int roll2 = random.nextInt(max) + 1;
-			int currentrolls = 0;
+			int currentRolls = 0;
 
-			while(roll1 != roll2){
-				totalrolls++;
-				currentrolls++;
-				totalscore += roll1 + roll2;
+			while(roll1 + roll2 != 2){
+				totalRolls++;
+				currentRolls++;
+				totalScore += roll1 + roll2;
 				roll1 = random.nextInt(max) + 1;
 				roll2 = random.nextInt(max) + 1;
 			}
 
-			totalrolls++;
-			currentrolls++;
+			totalRolls++;
+			currentRolls++;
 
-			if(currentrolls > 4){
-				morefour++;
+			if(currentRolls > 4){
+				moreFour++;
 			}
 		}
 
-		System.out.println("average rolls: \t" + (totalrolls/ (double) n) + "\nAverage score: \t" + (totalscore/ (double) n) + "\nPercent with more than four rolls: \t" + (morefour/ (double) n * 100.f));
+		System.out.println("average rolls: \t" + (totalRolls/ (double) n) + "\nAverage score: \t" + (totalScore/ (double) n) + "\nPercent with more than four rolls: \t" + (moreFour/ (double) n * 100.f));
 	}
 
 }
