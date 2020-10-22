@@ -16,7 +16,7 @@ public class Color {
 		Random random = new Random();
 		
 		for (int i = 0; i < 3; i++){
-			colors[i] = random.nextInt(255) + 1;
+			colors[i] = random.nextInt(256);
 		}
 
 	}
