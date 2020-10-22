@@ -45,6 +45,18 @@ public class Color {
 		return colors;
 	}
 
+	public int getRed(){
+		return getColors()[0];
+	}
+	
+	public int getGreen(){
+		return getColors()[1];
+	}
+
+	public int getBlue(){
+		return getColors()[2];
+	}
+
 	public void lighten(double percent){
 		for (int i = 0; i < 3; i++){
 			colors[i] *= 1.f + (percent/100);
