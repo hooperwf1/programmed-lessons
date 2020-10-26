@@ -14,12 +14,18 @@ public class Box {
 		length = side;
 	}
 
+	public Box(Box oldBox){
+		this.length = oldBox.length();
+		this.width = oldBox.width();
+		this.height = oldBox.height();
+	}
+
 	public double volume() {
 		return length * width * height;
 	}
 
 	public double area() {
-		return 2 * length * width + 2 * width * height + 2 * length * height;
+		return 2 * faceArea() + 2 * topArea() + 2 * sideArea();
 	}
 
 	public void setHeight(double height){
@@ -34,15 +40,39 @@ public class Box {
 		this.length = length;
 	}
 
-	public double getHeight(){
+	public double height(){
 		return height;
 	}
 	
-	public double getWidth(){
+	public double width(){
 		return width;
 	}
 
-	public double getLength(){
+	public double length(){
 		return length;
+	}
+
+	private double faceArea(){
+		return length * width;
+	}
+	
+	private double topArea(){
+		return length * height;
+	}
+
+	private double sideArea(){
+		return height * width;
+	}
+
+	public Box biggerBox(Box oldBox){
+		return new Box(1.25 * oldBox.height(), 1.25 * oldBox.width(), 1.25 * oldBox.length()); 
+	}
+
+	public Box smallerBox(Box oldBox){
+		return new Box(.75 * oldBox.height(), .75 * oldBox.width(), .75 * oldBox.length()); 
+	}
+
+	public boolean nests(Box outsideBox){
+		return length < outsideBox.length() && width < outsideBox.width() && height < outsideBox.height();
 	}
 }
