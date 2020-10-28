@@ -82,8 +82,10 @@ public class Color {
 		return new Color(newColors[0], newColors[1], newColors[2]);	
 	}
 
-	public void toString(){
-		return "[" + colors[0] + ", " + colors[1] + ", " + colors[2] + "]";
+	public String toString(){
+		String value = new String("[" + colors[0] + ", " + colors[1] + ", " + colors[2] + "]");
+		
+		return value;
 	}
 
 	private void correctColor(){

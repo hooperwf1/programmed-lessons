@@ -12,7 +12,7 @@ public class ColorTester {
 		Color otherColor = new Color(150, 150, 200);
 		otherColor.lighten(50.f);
 		color.darken(10.f);
-		color.blendColor(otherColor).printColor();
+		System.out.println(color.blendColor(otherColor));
 		System.out.println(color.getRed());
 	}
 
