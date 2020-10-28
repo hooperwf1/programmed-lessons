@@ -3,18 +3,21 @@ import java.util.*;
 public class Color {
 	
 	int colors[] = new int[3];
+	Random random;
 
 	Color(){
+		random = new Random();
+
 		randomColor();
 	}
 
 	Color(int r, int g, int b){
+		random = new Random();
+
 		setColor(r, g, b);
 	}
 
 	public void randomColor(){
-		Random random = new Random();
-		
 		for (int i = 0; i < 3; i++){
 			colors[i] = random.nextInt(256);
 		}
@@ -79,8 +82,8 @@ public class Color {
 		return new Color(newColors[0], newColors[1], newColors[2]);	
 	}
 
-	public void printColor(){
-		System.out.println("[" + colors[0] + ", " + colors[1] + ", " + colors[2] + "]");
+	public void toString(){
+		return "[" + colors[0] + ", " + colors[1] + ", " + colors[2] + "]";
 	}
 
 	private void correctColor(){
