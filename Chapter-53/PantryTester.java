@@ -16,6 +16,14 @@ class Jam
     capacity = size;
   }
 
+  public int getCapacity(){
+	return capacity;
+  }
+
+  public String getDate(){
+	return date;
+  }
+
   // Methods
   public boolean empty ()
   {
@@ -138,6 +146,16 @@ class Pantry
       jar3 = j;
     }
 
+  }
+
+  public void mixedFruit(){
+	if(jar1.getCapacity() < 3 &&  jar2.getCapacity() < 3 &&  jar3.getCapacity() < 3){
+		Jam j = new Jam("Mixed Fruit", jar1.getDate(), jar1.getCapacity() + jar2.getCapacity() + jar3.getCapacity());
+
+		jar1 = j;
+		jar2 = null;
+		jar3 = null;
+	}
   }
 }
 
