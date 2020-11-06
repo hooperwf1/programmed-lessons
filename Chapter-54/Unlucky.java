@@ -1,25 +1,23 @@
 import java.util.Scanner;
 
-public class Odious {
+public class Unlucky {
 
-	public static boolean isOdious(int num){
-		int ones = 0;
+	public static boolean isUnlucky(int num){
+		int recent = 0;
 
-		if(num % 2 == 1){
-			ones++;
-		}
-
-		num /= 2;
+		recent = num % 10;
+		num /= 10;
 
 		while (num != 0){
-			if(num % 2 == 1){
-				ones++;
+			if(num % 10 == 1 && recent == 3){
+				return true;
 			}
 
-			num /= 2;
+			recent = num % 10;
+			num /= 10;
 		}
 
-		return ones % 2 == 1;
+		return false;
 
 	}
 
@@ -31,10 +29,10 @@ public class Odious {
 		int currentNum = scanner.nextInt();
 
 		while(currentNum >= 0){
-			if(isOdious(currentNum)){
-				System.out.println("Odious");
+			if(isUnlucky(currentNum)){
+				System.out.println("Unlucky");
 			} else {
-				System.out.println("Evil");
+				System.out.println("Lucky");
 			}
 
 			System.out.print("Enter number: ");
